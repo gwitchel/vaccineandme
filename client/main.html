@@ -1,0 +1,40 @@
+<head>
+  <title>covid-sideff</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> header}}
+</body>
+
+<template name="header">
+  <body class="d-flex h-100 text-center text-white bg-dark" data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Cover</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+            {{> loginButtons}}
+          </nav>
+        </div>
+      </header>
+    </div>
+    
+    
+        
+      
+    
+  </body>
+  {{#if currentUser}}
+    <h6> WELCOME BACK </h6> 
+  {{else}}
+    <h6>Log in to get started! </h6> 
+  {{/if}}
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+

@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import PopperJS from 'popper.js';
 import './main.html';
 import 'boostrap'
 

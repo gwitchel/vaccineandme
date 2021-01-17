@@ -1,5 +1,5 @@
 <head>
-  <title>vaxime</title>
+  <title>Vaxime</title>
 </head>
 
 <template name = "main">
@@ -15,15 +15,66 @@
 </template>
 
 <template name="header">
-  <div class="header is-center">
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed ">
-        <a class="pure-menu-heading" href="">Vaxime</a>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">my symptoms</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">vaccine</a></li>
+    .font-light { 
+      font-weight: lighter;
+    }
+
+    .cursive { 
+      font-family: cursive;
+    }
+
+    .header { 
+      width: 100%;
+    }
+
+    .container {
+      padding-left: 10%; 
+      padding-right: 10%;
+    }
+  
+    .is-center { 
+      text-align: center;
+    }
+    .align-right { 
+      float: right;
+    }
+
+    .main-content { 
+      margin-top: 150px;
+    }
+
+    .header { 
+      position: fixed;
+      left: 0;
+      top: 0; 
+      width: 100%;
+    }
+
+    .footer { 
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding-bottom: 15px;  
+      text-align: center;
+    }
+  </style>
+
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed ">
+        <a class="pure-menu-heading" href="#">VAXIME</a>
+
+        <ul class="pure-menu-list push-right align-right">
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">MY SYMPTOMS</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">VACCINE</a></li>
             <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-              <a href="#" id="menuLink1" class="pure-menu-link">me</a>
+              <a href="#" id="menuLink1" class="pure-menu-link"><i class="fa fa-user"></i></a>
               <ul class="pure-menu-children">
                       <li class="pure-menu-item">
                         <a href="#" class="pure-menu-link">my profile</a>
@@ -38,12 +89,28 @@
 </div>
 </template>
 
+<body>
+  <div class="container main-content">
+    <div class="title is-center">
+      <h1 class="font-light">WELCOME TO VAXIME</h1>
+    </div>
+    <div class="sub-title is-center">
+      <h3 class="font-light">
+        Vaxime is a self-diagnosis tool meant for tracking and advising on possible side effects that appear due to the COVID vaccine.
+        <br>By employing machine learning (ML), the data inputted to the system is analyzed and congregated to create a personalized report to tell you what possible side effects you may experience.
+        <br>The data you input will then be stored and help to create more accurate predictions in the future</h3>
+    </div>  
+    <div class="redirect-button is-center">
+      <a href="#" class="pure-menu-link"><button class="button black">SIGN IN TO GET STARTED</button>{{> loginButtons}}</a>
+    </div>
+  </div>
+</body>
+
 <template name="footer">
-  <div class="footer l-box is-center">
-   vaxime
+  <div class="footer font-light l-box is-center">
+   VAXIME, HackDavis 2021
   </div>
 </template>
 
 <template name="notLoggedIn">
 </template>
-

@@ -4,6 +4,7 @@ import './main.html';
 import './profile.html'
 import './mySymptoms.html'
 
+
 Template.header.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
@@ -17,8 +18,18 @@ Template.header.helpers({
 
 Template.profile.events({
   'click button'(event, instance) {
-    // increment the counter when button is clicked
-    console.log("FOOOO")
+    event.preventDefault();
+    Meteor.users.update(this.userId, {
+      $set: { 
+        "height": $('#height').val(),
+        "weight": $('#weight').val(),
+        "age": $('#age').val(),
+        "dateLV": $('#dateLV').val(),
+        "race": $('#race').val(),
+        "gender": $('#gender').val(),
+      }
+    });
+  Router.go('/mySymptoms')
   },
 });
 
@@ -30,4 +41,7 @@ Router.route('/', {
 });
 Router.route('/mySymptoms', {
   template: 'mySymptoms'
+});
+Router.route('/vaccine', {
+  template: 'vaccine'
 });

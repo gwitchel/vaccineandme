@@ -3,18 +3,24 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 import './profile.html'
 import './mySymptoms.html'
-
+import './vaccine.html'
 
 Template.header.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
 });
 
-Template.header.helpers({
-  counter() {
-    return Template.instance().counter.get();
+
+Template.header.events({
+  'click #vac'(event){
+    event.preventDefault(); 
+    Router.go('/vaccine')
   },
-});
+  'click #symp'(event){
+    event.preventDefault(); 
+    Router.go('/mySymptoms')
+  },
+})
 
 Template.profile.events({
   'click button'(event, instance) {

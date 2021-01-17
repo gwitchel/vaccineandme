@@ -1,13 +1,18 @@
-html {
+  html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: larger;
-    }
+  }
 
-    .half-container { 
-        width: 45%; 
-    }
+  .half-container { 
+    width: 45%; 
+    display: inline-table;
+  }
 
-    .font-light { 
+  .pad-left { 
+    padding-left: 25px;
+  }
+
+  .font-light { 
     font-weight: lighter;
   } 
 
@@ -18,17 +23,21 @@ html {
   .container {
     padding-left: 10%; 
     padding-right: 10%;
+
+    padding-bottom: 20%;
   }
 
   .is-center { 
     text-align: center;
   }
+
   .align-right { 
     float: right;
   }
 
   .main-content { 
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
 
   .header { 
@@ -45,4 +54,12 @@ html {
     width: 100%;
     padding-bottom: 15px;  
     text-align: center;
+  }
+
+  .vaccine-description { 
+      max-height: 500px;
+  }
+
+  .row { 
+      width: 100%;
   }

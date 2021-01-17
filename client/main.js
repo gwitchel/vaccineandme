@@ -31,3 +31,8 @@ Router.route('/', {
 Router.route('/mySymptoms', {
   template: 'mySymptoms'
 });
+Router.route('/vaccine', {
+  template: 'vaccine'
+});
+
+//https://www.kaggle.com/gpreda/pfizer-vaccine-tweets

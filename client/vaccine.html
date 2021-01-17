@@ -1,102 +1,27 @@
-<head>
-    <title>Vaxime</title>
-  </head>
-  
-  <template name = "main">
-      {{> header}}
-      <body>
-      {{#if currentUser}}
-          {{>yield}}
-      {{else}}
-        {{> notLoggedIn}}
-      {{/if}}
-      </body>
-      {{>footer}}
-  </template>
-  
-  <template name="header">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      html {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: larger;
-      }
-  
-      .font-light { 
-        font-weight: lighter;
-      } 
-  
-      .header { 
-        width: 100%;
-      }
-  
-      .container {
-        padding-left: 10%; 
-        padding-right: 10%;
-      }
-    
-      .is-center { 
-        text-align: center;
-      }
-      .align-right { 
-        float: right;
-      }
-  
-      .main-content { 
-        margin-top: 150px;
-      }
-  
-      .header { 
-        position: fixed;
-        left: 0;
-        top: 0; 
-        width: 100%;
-      }
-  
-      .footer { 
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding-bottom: 15px;  
-        text-align: center;
-      }
-    </style>
-  
-    <div class="header">
-      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed ">
-          <a class="pure-menu-heading" href="#">VAXIME</a>
-  
-          <ul class="pure-menu-list push-right align-right">
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">MY SYMPTOMS</a></li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">VACCINE</a></li>
-              <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                <a href="#" id="menuLink1" class="pure-menu-link"><i class="fa fa-user"></i></a>
-                <ul class="pure-menu-children">
-                        <li class="pure-menu-item">
-                          <a href="#" class="pure-menu-link">my profile</a>
-                      </li>
-                      <li class="pure-menu-item">
-                          <a href="#" class="pure-menu-link">{{> loginButtons}}</a>
-                      </li>
-                  </ul>
-              </li>
-          </ul>
-      </div>
-  </div>
-  </template>
-  
-  <body>
+<template name="vaccine">
     <div class="container main-content">
-      
+        <div class="half-container">
+            <div class="title">
+                <h2 class="font-light">So what is the vaccine?</h2>
+            </div>
+            <div class="subtitle">
+                <h3 class="font-light">
+                    As per canada.ca: <br>
+                    <span class="quote-text">
+                        The Moderna COVID-19 vaccine (mRNA-1273) is used to prevent COVID-19. This disease is caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).
+
+                    </span>
+
+
+The Moderna COVID-19 mRNA vaccine is manufactured by Moderna Therapeutics Inc. Health Canada authorized this vaccine with conditions on December 23, 2020, under the Interim Order Respecting the Importation, Sale and Advertising of Drugs for Use in Relation to COVID-19. 
+
+Find detailed technical information about the Moderna vaccine, such as the product monograph and our regulatory decision summary, in the COVID-19 vaccines and treatments regulatory portal.
+
+                </h3>
+            </div>
+        </div>
+        <div class="half-container">
+
+        </div>
     </div>
-  </body>
-  
-  <template name="footer">
-    <div class="footer font-light l-box is-center">
-     VAXIME, HackDavis 2021
-    </div>
-  </template>
-  
-  <template name="notLoggedIn">
   </template>

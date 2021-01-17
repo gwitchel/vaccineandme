@@ -1,8 +1,8 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import PopperJS from 'popper.js';
 import './main.html';
-import 'boostrap'
+import './profile.html'
+import './mySymptoms.html'
 
 Template.header.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -15,9 +15,19 @@ Template.header.helpers({
   },
 });
 
-Template.header.events({
+Template.profile.events({
   'click button'(event, instance) {
     // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+    console.log("FOOOO")
   },
+});
+
+Router.configure({
+  layoutTemplate: 'main'
+});
+Router.route('/', {
+  template: 'profile'
+});
+Router.route('/mySymptoms', {
+  template: 'mySymptoms'
 });

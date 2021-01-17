@@ -2,31 +2,48 @@
   <title>vaxime</title>
 </head>
 
-<body>
-  {{> header}}
-</body>
+<template name = "main">
+    {{> header}}
+    <body>
+    {{#if currentUser}}
+        {{>yield}}
+    {{else}}
+      {{> notLoggedIn}}
+    {{/if}}
+    </body>
+    {{>footer}}
+</template>
 
 <template name="header">
-  <div class="pure-menu pure-menu-horizontal">
-    <a href="#" class="pure-menu-heading pure-menu-link">vaxime</a>
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">click me </a>
-        </li>
-        <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">me too!</a>
-        </li>
-        <li class="pure-menu-item">
-          {{> loginButtons}}
-        </li>
-    </ul>
+  <div class="header is-center">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed ">
+        <a class="pure-menu-heading" href="">Vaxime</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">my symptoms</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">vaccine</a></li>
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+              <a href="#" id="menuLink1" class="pure-menu-link">me</a>
+              <ul class="pure-menu-children">
+                      <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">my profile</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">{{> loginButtons}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </div>
-  {{#if currentUser}}
-    <h6> WELCOME BACK </h6> 
-  {{else}}
-    <h6>Log in to get started! </h6> 
-  {{/if}}
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="footer">
+  <div class="footer l-box is-center">
+   vaxime
+  </div>
+</template>
+
+<template name="notLoggedIn">
 </template>
 

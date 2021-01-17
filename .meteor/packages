@@ -25,3 +25,4 @@ seba:minifiers-autoprefixer
 accounts-ui
 accounts-password
 flaviocopes:purecss
+iron:router
